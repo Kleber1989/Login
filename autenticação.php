@@ -21,14 +21,21 @@
                 $usuarioAutenticado = $_POST["usuario"];
                 $senhaAutenticada = $_POST["senha"];
 
-                if ($usuarioAutenticado == "Kleber@gmail.com" and $senhaAutenticada == 12345 ){
+                if ($usuarioAutenticado == "Kleber@gmail.com" && $senhaAutenticada == 12345 ) {
 
                     echo "Acesso Liberado";
+                    
+                } elseif($usuarioAutenticado != "Kleber@gmail.com") {
 
-                }else {
-                    echo "Usuário ou Senha Inválido";
+                    echo "Usuário inválido";
+                    
+                } elseif($senhaAutenticada != 12345) {
+
+                    echo "Senha inválida";
+                    
+                } else {
+                    echo "Usuário e senha Inválidos";
                 }
-
             ?><br><br>
             <a href="index.php">Inicio</a>
 
