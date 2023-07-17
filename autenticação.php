@@ -18,25 +18,31 @@
 
             <?php
 
+
                 $usuarioAutenticado = $_POST["usuario"];
                 $senhaAutenticada = $_POST["senha"];
 
-                if ($usuarioAutenticado == "Kleber@gmail.com" && $senhaAutenticada == 12345 ) {
+
+                if ($usuarioAutenticado == "Joshua@gmail.com" && $senhaAutenticada == 12345 ){
 
                     echo "Acesso Liberado";
-                    
-                } elseif($usuarioAutenticado != "Kleber@gmail.com") {
 
-                    echo "Usuário inválido";
+                } elseif ($usuarioAutenticado == "Joshua@gmail.com" && $senhaAutenticada != 12345) {
                     
-                } elseif($senhaAutenticada != 12345) {
+                    echo "Usuário correto.<br>";
+                    echo "Senha Inválida.";
 
-                    echo "Senha inválida";
+                } elseif ($usuarioAutenticado != "Joshua@gmail.com" && $senhaAutenticada == 12345) {
                     
+                    echo "Usuário Inválido.<br>";
+                    echo "Senha Correta.";
+
                 } else {
                     
-                    echo "Usuário e senha Inválidos";
+                    echo "Usuário ou Senha Inválido";
                 }
+
+
             ?><br><br>
             <a href="index.php">Inicio</a>
 
